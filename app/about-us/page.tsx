@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { ArrowRight, Building2,  Send } from "lucide-react"
+import {  Building2,  Send } from "lucide-react"
 import { GeistSans } from "geist/font/sans"
 
 export default function AboutUsPage() {
