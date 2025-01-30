@@ -32,8 +32,8 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg md:text-xl lg:text-2xl text-center lg:text-left mb-6 text-blue-800 max-w-2xl lg:max-w-none"
             >
-              Delivering Smarter Tools and Expert support to transform the way
-              CRE works
+              Delivering Smarter Tools and Expert support to transform <br />{" "}
+              the way CRE works
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
