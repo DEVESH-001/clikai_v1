@@ -540,7 +540,7 @@ export function HeroGraphs() {
   };
 
   return (
-    <div className="grid grid-rows-[auto_auto] gap-4 h-full p-4">
+    <div className="grid grid-rows-[auto_auto] gap-1 h-full">
       <Card className="shadow-lg rounded-[8px] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/80 backdrop-blur-sm">
         <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-0.5 space-y-0">
           <CardTitle className="text-xs font-bold px-2 py-1">
@@ -551,10 +551,10 @@ export function HeroGraphs() {
             {topGraphIndex === 4 && "Rent Roll Analysis"}
           </CardTitle>
         </CardHeader>
-        <CardContent className="p-0 h-[180px]">{renderTopGraph()}</CardContent>
+        <CardContent className="p-0 h-[120px]">{renderTopGraph()}</CardContent>
       </Card>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-1">
         <Card className="shadow-lg rounded-[8px] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/80 backdrop-blur-sm">
           <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-0.5 space-y-0">
             <CardTitle className="text-xs font-bold px-2 py-1">
@@ -565,7 +565,7 @@ export function HeroGraphs() {
               {bottomLeftGraphIndex === 4 && "Occupancy Status"}
             </CardTitle>
           </CardHeader>
-          <CardContent className="p-0 h-[140px]">
+          <CardContent className="p-0 h-[100px]">
             {renderBottomGraph(bottomLeftGraphIndex)}
           </CardContent>
         </Card>
@@ -580,7 +580,7 @@ export function HeroGraphs() {
               {bottomRightGraphIndex === 4 && "Occupancy Status"}
             </CardTitle>
           </CardHeader>
-          <CardContent className="p-0 h-[140px]">
+          <CardContent className="p-0 h-[100px]">
             {renderBottomGraph(bottomRightGraphIndex)}
           </CardContent>
         </Card>

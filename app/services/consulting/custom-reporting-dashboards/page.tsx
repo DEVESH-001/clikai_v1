@@ -28,8 +28,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { GradientBackground } from "@/components/gradient-background";
-
+import { GradientBackground } from "@/components/sections/gradient-background";
 
 ChartJS.register(
   CategoryScale,

@@ -24,7 +24,7 @@ import {
   Settings,
 } from "lucide-react";
 import { Suspense } from "react";
-import { GradientBackground } from "@/components/gradient-background";
+import { GradientBackground } from "@/components/sections/gradient-background";
 
 const benefits = [
   {

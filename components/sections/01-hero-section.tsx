@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { HeroGraphs } from "@/components/hero-graphs";
+import { HeroGraphs } from "@/components/sections/hero-graphs";
 import { motion } from "framer-motion";
 
 export function HeroSection() {
