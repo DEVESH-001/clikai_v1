@@ -4,12 +4,14 @@ import { motion } from "framer-motion"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { Building2,  Send } from "lucide-react"
+import { ArrowRight, Building2,  Send } from "lucide-react"
 import { GeistSans } from "geist/font/sans"
 
 export default function AboutUsPage() {
   return (
-    <div className={`min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50 ${GeistSans.className}`}>
+    <div
+      className={`min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50 ${GeistSans.className}`}
+    >
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-soft-light"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
 
@@ -76,7 +78,9 @@ export default function AboutUsPage() {
                   <Building2 className="w-6 h-6 text-blue-600" />
                   <h3 className="text-xl font-bold">Toronto</h3>
                 </div>
-                <p className="text-gray-600">325 Front Street West, Suite 400, Toronto</p>
+                <p className="text-gray-600">
+                  325 Front Street West, Suite 400, Toronto
+                </p>
               </Card>
             </motion.div>
 
@@ -90,14 +94,18 @@ export default function AboutUsPage() {
                   <Building2 className="w-6 h-6 text-blue-600" />
                   <h3 className="text-xl font-bold">New York</h3>
                 </div>
-                <p className="text-gray-600">26 Broadway, 8th floor, New York</p>
+                <p className="text-gray-600">
+                  26 Broadway, 8th floor, New York
+                </p>
               </Card>
             </motion.div>
           </div>
         </div>
 
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-12">Trusted By Industry Leaders</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Trusted By Industry Leaders
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center max-w-4xl mx-auto">
             {[
               {
@@ -134,14 +142,14 @@ export default function AboutUsPage() {
             ))}
           </div>
         </div>
-
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="max-w-2xl mx-auto text-center"
         >
-          <Card className="p-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+         <Card className="p-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
             <h2 className="text-2xl font-bold mb-4">Want to work for us?</h2>
             <p className="mb-6">
               Think you&apos;d be interested in engineering and product roles at Clik.ai? Great! Let&apos;s connect!
@@ -150,10 +158,14 @@ export default function AboutUsPage() {
               Send Us Your Pitch
               <Send className="w-4 h-4 ml-2" />
             </Button>
-          </Card>
+          </Card> 
+
+          
         </motion.div>
+
+       
       </div>
     </div>
-  )
+  );
 }
 
