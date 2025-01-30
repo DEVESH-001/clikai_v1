@@ -206,24 +206,22 @@ export function Navbar() {
 
   return (
     <>
-      <div
-        className={`fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm`}
-      >
-        <div className="container mx-auto flex h-16 items-center justify-center lg:justify-between">
-          {/* Center align for smaller screens */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm">
+        <div className="container mx-auto px-4 flex h-16 items-center justify-between">
+          {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src={imageUrls.logo || "/placeholder.svg"}
               alt="Clik.ai Logo"
               width={120}
               height={36}
-              className="mr-4 lg:mr-8" // Add spacing if needed
+              className="mr-4"
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex flex-1 justify-center ">
-            <NavigationMenu className="hidden lg:flex flex-1 justify-center">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex flex-1 justify-center">
+            <NavigationMenu>
               <NavigationMenuList className="space-x-6">
                 <NavigationMenuItem value="products">
                   <NavigationMenuTrigger
@@ -337,6 +335,21 @@ export function Navbar() {
             </NavigationMenu>
           </div>
 
+          {/* Right Side Actions - Aligned with container */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <Link
+              href="/login"
+              className={`${navItemClass} hover:text-gray-900`}
+            >
+              SIGN IN
+            </Link>
+            <Link href="/get-started">
+              <Button className="bg-blue-600 hover:bg-blue-700 rounded-[8px] uppercase font-medium tracking-wider text-sm text-white px-6">
+                GET STARTED
+              </Button>
+            </Link>
+          </div>
+
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
@@ -349,23 +362,6 @@ export function Navbar() {
               <Menu className="h-5 w-5" />
             )}
           </Button>
-
-          {/* Right Side Actions */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <Link
-              href="/login"
-              className={`${navItemClass} hover:text-gray-900`}
-            >
-              SIGN IN
-            </Link>
-            <Link href="/get-started">
-              <Button
-                className={`bg-blue-600 hover:bg-blue-700 rounded-[8px] uppercase font-medium tracking-wider text-sm text-white`}
-              >
-                GET STARTED
-              </Button>
-            </Link>
-          </div>
         </div>
       </div>
 

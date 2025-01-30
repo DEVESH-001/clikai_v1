@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { motion, AnimatePresence } from "framer-motion";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -540,65 +540,51 @@ export function HeroGraphs() {
   };
 
   return (
-    <div className="flex flex-col h-full w-full relative z-10 rounded-lg">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={JSON.stringify(data)}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 gap-1 h-full"
-        >
-          <Card className="shadow-lg rounded-[8px] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/80 backdrop-blur-sm">
-            <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-0.5">
-              <CardTitle className="text-sm font-bold">
-                {topGraphIndex === 0 && "Monthly Revenue"}
-                {topGraphIndex === 1 && "Lease Expirations"}
-                {topGraphIndex === 2 && "Cashflow Summary"}
-                {topGraphIndex === 3 && "Investor Distribution Schedule"}
-                {topGraphIndex === 4 && "Rent Roll Analysis"}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-0.5 h-[160px]">
-              {renderTopGraph()}
-            </CardContent>
-          </Card>
+    <div className="grid grid-rows-[auto_auto] gap-4 h-full p-4">
+      <Card className="shadow-lg rounded-[8px] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/80 backdrop-blur-sm">
+        <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-0.5 space-y-0">
+          <CardTitle className="text-xs font-bold px-2 py-1">
+            {topGraphIndex === 0 && "Monthly Revenue"}
+            {topGraphIndex === 1 && "Lease Expirations"}
+            {topGraphIndex === 2 && "Cashflow Summary"}
+            {topGraphIndex === 3 && "Investor Distribution Schedule"}
+            {topGraphIndex === 4 && "Rent Roll Analysis"}
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="p-0 h-[180px]">{renderTopGraph()}</CardContent>
+      </Card>
 
-          <div className="grid grid-cols-2 gap-1">
-            <Card className="shadow-lg rounded-[8px] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/80 backdrop-blur-sm">
-              <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-0.5">
-                <CardTitle className="text-sm font-bold">
-                  {bottomLeftGraphIndex === 0 && "Property Comparison Report"}
-                  {bottomLeftGraphIndex === 1 && "NOI Trend"}
-                  {bottomLeftGraphIndex === 2 && "Loan Underwriting Report"}
-                  {bottomLeftGraphIndex === 3 && "Unit Mix"}
-                  {bottomLeftGraphIndex === 4 && "Occupancy Status"}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-0.5 h-[140px]">
-                {renderBottomGraph(bottomLeftGraphIndex)}
-              </CardContent>
-            </Card>
+      <div className="grid grid-cols-2 gap-4">
+        <Card className="shadow-lg rounded-[8px] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/80 backdrop-blur-sm">
+          <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-0.5 space-y-0">
+            <CardTitle className="text-xs font-bold px-2 py-1">
+              {bottomLeftGraphIndex === 0 && "Property Comparison Report"}
+              {bottomLeftGraphIndex === 1 && "NOI Trend"}
+              {bottomLeftGraphIndex === 2 && "Loan Underwriting Report"}
+              {bottomLeftGraphIndex === 3 && "Unit Mix"}
+              {bottomLeftGraphIndex === 4 && "Occupancy Status"}
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-0 h-[140px]">
+            {renderBottomGraph(bottomLeftGraphIndex)}
+          </CardContent>
+        </Card>
 
-            <Card className="shadow-lg rounded-[8px] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/80 backdrop-blur-sm">
-              <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-0.5">
-                <CardTitle className="text-sm font-bold">
-                  {bottomRightGraphIndex === 0 && "Property Comparison Report"}
-                  {bottomRightGraphIndex === 1 && "NOI Trend"}
-                  {bottomRightGraphIndex === 2 && "Loan Underwriting Report"}
-                  {bottomRightGraphIndex === 3 && "Unit Mix"}
-                  {bottomRightGraphIndex === 4 && "Occupancy Status"}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-0.5 h-[140px]">
-                {renderBottomGraph(bottomRightGraphIndex)}
-              </CardContent>
-            </Card>
-          </div>
-        </motion.div>
-      </AnimatePresence>
+        <Card className="shadow-lg rounded-[8px] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/80 backdrop-blur-sm">
+          <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-0.5 space-y-0">
+            <CardTitle className="text-xs font-bold px-2 py-1">
+              {bottomRightGraphIndex === 0 && "Property Comparison Report"}
+              {bottomRightGraphIndex === 1 && "NOI Trend"}
+              {bottomRightGraphIndex === 2 && "Loan Underwriting Report"}
+              {bottomRightGraphIndex === 3 && "Unit Mix"}
+              {bottomRightGraphIndex === 4 && "Occupancy Status"}
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-0 h-[140px]">
+            {renderBottomGraph(bottomRightGraphIndex)}
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }
-
