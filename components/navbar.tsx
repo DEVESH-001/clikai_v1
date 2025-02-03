@@ -464,7 +464,7 @@ export function Navbar() {
 
               <Link
                 href="/why-clik-ai"
-                className={`block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md ${navItemClass}`}
+                className={`block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md ${navItemClass}  text-black`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 WHY CLIK.AI
@@ -476,7 +476,7 @@ export function Navbar() {
                   scrollToPricing(e);
                   setMobileMenuOpen(false);
                 }}
-                className={`block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md ${navItemClass}`}
+                className={`block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md ${navItemClass} text-black`}
               >
                 PRICING
               </Link>
