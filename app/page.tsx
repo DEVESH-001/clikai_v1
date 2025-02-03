@@ -10,19 +10,15 @@ import { ServicesSection } from "@/components/sections/06-services-section";
 import { TestimonialsSection } from "@/components/sections/07-testimonials";
 import { FAQSection } from "@/components/sections/08-faq-section";
 
-//import { useSearchParams } from 'next/navigation';
-
 export default function Home() {
   const [highlightedProduct, setHighlightedProduct] = useState("AutoUW");
 
   useEffect(() => {
-
-    if (window.location.hash === '#pricing') {
-
+    if (window.location.hash === "#pricing") {
       setTimeout(() => {
-        const pricingSection = document.getElementById('pricing');
+        const pricingSection = document.getElementById("pricing");
         if (pricingSection) {
-          pricingSection.scrollIntoView({ behavior: 'smooth' });
+          pricingSection.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
     }

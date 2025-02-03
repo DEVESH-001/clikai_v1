@@ -543,7 +543,7 @@ export function HeroGraphs() {
     <div className="grid grid-rows-[auto_auto] gap-1 h-full">
       <Card className="shadow-lg rounded-[8px] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/80 backdrop-blur-sm">
         <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-0.5 space-y-0">
-          <CardTitle className="text-xs font-bold px-2 py-1">
+          <CardTitle className="text-xs font-bold px-2 py-2">
             {topGraphIndex === 0 && "Monthly Revenue"}
             {topGraphIndex === 1 && "Lease Expirations"}
             {topGraphIndex === 2 && "Cashflow Summary"}
@@ -557,7 +557,7 @@ export function HeroGraphs() {
       <div className="grid grid-cols-2 gap-1 mt-6">
         <Card className="shadow-lg rounded-[8px] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/80 backdrop-blur-sm">
           <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-0.5 space-y-0">
-            <CardTitle className="text-xs font-bold px-2 py-1">
+            <CardTitle className="text-xs font-bold px-2 py-2">
               {bottomLeftGraphIndex === 0 && "Property Comparison Report"}
               {bottomLeftGraphIndex === 1 && "NOI Trend"}
               {bottomLeftGraphIndex === 2 && "Loan Underwriting Report"}
@@ -572,7 +572,7 @@ export function HeroGraphs() {
 
         <Card className="shadow-lg rounded-[8px] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/80 backdrop-blur-sm ">
           <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-0.5 space-y-0">
-            <CardTitle className="text-xs font-bold px-2 py-1">
+            <CardTitle className="text-xs font-bold px-2 py-2">
               {bottomRightGraphIndex === 0 && "Property Comparison Report"}
               {bottomRightGraphIndex === 1 && "NOI Trend"}
               {bottomRightGraphIndex === 2 && "Loan Underwriting Report"}

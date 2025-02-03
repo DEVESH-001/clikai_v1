@@ -206,161 +206,162 @@ export function Navbar() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm">
-        <div className="container mx-auto px-4 flex h-16 items-center justify-between">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm w-full ">
+        {/* <div className="container mx-auto px-4 flex h-16 items-center justify-between"> */}
+        <div className=" mx-auto px-8 flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image
-              src={imageUrls.logo || "/placeholder.svg"}
-              alt="Clik.ai Logo"
-              width={120}
-              height={36}
-              className="mr-4"
-            />
+        <Image
+          src={imageUrls.logo || "/placeholder.svg"}
+          alt="Clik.ai Logo"
+          width={120}
+          height={36}
+          className="mr-4"
+        />
           </Link>
 
           {/* Desktop Navigation - Centered */}
-          <div className="hidden lg:flex flex-1 justify-center">
-            <NavigationMenu>
-              <NavigationMenuList className="space-x-6">
-                <NavigationMenuItem value="products">
-                  <NavigationMenuTrigger
-                    className={`${navItemClass} bg-transparent hover:bg-transparent`}
+          <div className="hidden lg:flex flex-1 justify-center text-black ">
+        <NavigationMenu>
+          <NavigationMenuList className="space-x-6 ">
+            <NavigationMenuItem value="products">
+          <NavigationMenuTrigger
+            className={`${navItemClass} bg-transparent hover:bg-transparent text-black`}
+          >
+            PRODUCTS
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <div className="w-[600px] p-4 md:p-6 bg-white ">
+              <div className="grid grid-cols-2 gap-4 bg-white ">
+            {products.map((category) => (
+              <div key={category.title} className="space-y-2">
+                <h3 className="text-lg font-semibold text-blue-600">
+              {category.title}
+                </h3>
+                <p className="text-sm text-gray-600 mb-2">
+              {category.description}
+                </p>
+                <ul className="space-y-2">
+              {category.items.map((item) => (
+                <li key={item.title}>
+                  <Link
+                href={item.href}
+                className="group flex items-center p-2 rounded-md hover:bg-blue-50 transition-colors"
                   >
-                    PRODUCTS
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[600px] p-4 md:p-6 bg-white ">
-                      <div className="grid grid-cols-2 gap-4 bg-white ">
-                        {products.map((category) => (
-                          <div key={category.title} className="space-y-2">
-                            <h3 className="text-lg font-semibold text-blue-600">
-                              {category.title}
-                            </h3>
-                            <p className="text-sm text-gray-600 mb-2">
-                              {category.description}
-                            </p>
-                            <ul className="space-y-2">
-                              {category.items.map((item) => (
-                                <li key={item.title}>
-                                  <Link
-                                    href={item.href}
-                                    className="group flex items-center p-2 rounded-md hover:bg-blue-50 transition-colors"
-                                  >
-                                    <div>
-                                      <div className="text-sm font-medium text-gray-900 group-hover:text-blue-600">
-                                        {item.title}
-                                      </div>
-                                      <p className="text-xs text-gray-500">
-                                        {item.description}
-                                      </p>
-                                    </div>
-                                    <ChevronRight className="ml-auto w-4 h-4 text-gray-400 group-hover:text-blue-500" />
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+                <div>
+                  <div className="text-sm font-medium text-gray-900 group-hover:text-blue-600">
+                    {item.title}
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    {item.description}
+                  </p>
+                </div>
+                <ChevronRight className="ml-auto w-4 h-4 text-gray-400 group-hover:text-blue-500" />
+                  </Link>
+                </li>
+              ))}
+                </ul>
+              </div>
+            ))}
+              </div>
+            </div>
+          </NavigationMenuContent>
+            </NavigationMenuItem>
 
-                <NavigationMenuItem value="services">
-                  <NavigationMenuTrigger
-                    className={`${navItemClass} bg-transparent hover:bg-transparent`}
+            <NavigationMenuItem value="services">
+          <NavigationMenuTrigger
+            className={`${navItemClass} bg-transparent hover:bg-transparent text-black`}
+          >
+            SERVICES
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <div className="w-[800px] p-4 md:p-6 bg-white">
+              <div className="grid grid-cols-2 gap-6 bg-white">
+            {services.map((category) => (
+              <div key={category.title} className="space-y-2">
+                <h3 className="text-lg font-semibold text-blue-600">
+              {category.title}
+                </h3>
+                <p className="text-sm text-gray-600 mb-2">
+              {category.description}
+                </p>
+                <ul className="space-y-2">
+              {category.items.map((item) => (
+                <li key={item.title}>
+                  <Link
+                href={item.href}
+                className="group flex items-center p-2 rounded-md hover:bg-blue-50 transition-colors"
                   >
-                    SERVICES
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[800px] p-4 md:p-6 bg-white">
-                      <div className="grid grid-cols-2 gap-6 bg-white">
-                        {services.map((category) => (
-                          <div key={category.title} className="space-y-2">
-                            <h3 className="text-lg font-semibold text-blue-600">
-                              {category.title}
-                            </h3>
-                            <p className="text-sm text-gray-600 mb-2">
-                              {category.description}
-                            </p>
-                            <ul className="space-y-2">
-                              {category.items.map((item) => (
-                                <li key={item.title}>
-                                  <Link
-                                    href={item.href}
-                                    className="group flex items-center p-2 rounded-md hover:bg-blue-50 transition-colors"
-                                  >
-                                    <div>
-                                      <div className="text-sm font-medium text-gray-900 group-hover:text-blue-600">
-                                        {item.title}
-                                      </div>
-                                      <p className="text-xs text-gray-500">
-                                        {item.description}
-                                      </p>
-                                    </div>
-                                    <ChevronRight className="ml-auto w-4 h-4 text-gray-400 group-hover:text-blue-500" />
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link href="#pricing" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={`${navItemClass} bg-transparent hover:bg-transparent`}
-                      onClick={scrollToPricing}
-                    >
-                      PRICING
-                    </NavigationMenuLink>
+                <div>
+                  <div className="text-sm font-medium text-gray-900 group-hover:text-blue-600">
+                    {item.title}
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    {item.description}
+                  </p>
+                </div>
+                <ChevronRight className="ml-auto w-4 h-4 text-gray-400 group-hover:text-blue-500" />
                   </Link>
-                </NavigationMenuItem>
+                </li>
+              ))}
+                </ul>
+              </div>
+            ))}
+              </div>
+            </div>
+          </NavigationMenuContent>
+            </NavigationMenuItem>
 
-                <NavigationMenuItem>
-                  <Link href="/why-clik-ai" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={`${navItemClass} bg-transparent hover:bg-transparent`}
-                    >
-                      WHY CLIK.AI
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+            <NavigationMenuItem>
+          <Link href="#pricing" legacyBehavior passHref>
+            <NavigationMenuLink
+              className={`${navItemClass} bg-transparent hover:bg-transparent text-black`}
+              onClick={scrollToPricing}
+            >
+              PRICING
+            </NavigationMenuLink>
+          </Link>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+          <Link href="/why-clik-ai" legacyBehavior passHref>
+            <NavigationMenuLink
+              className={`${navItemClass} bg-transparent hover:bg-transparent text-black`}
+            >
+              WHY CLIK.AI
+            </NavigationMenuLink>
+          </Link>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
           </div>
 
           {/* Right Side Actions - Aligned with container */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link
-              href="/login"
-              className={`${navItemClass} hover:text-gray-900`}
-            >
-              SIGN IN
-            </Link>
-            <Link href="/get-started">
-              <Button className="bg-blue-600 hover:bg-blue-700 rounded-[8px] uppercase font-medium tracking-wider text-sm text-white px-6">
-                GET STARTED
-              </Button>
-            </Link>
+        <Link
+          href="/login"
+          className={`${navItemClass} hover:text-gray-900 text-black`}
+        >
+          SIGN IN
+        </Link>
+        <Link href="/get-started">
+          <Button className="bg-blue-600 hover:bg-blue-700 rounded-[8px] uppercase font-medium tracking-wider text-sm text-white px-6">
+            GET STARTED
+          </Button>
+        </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <Button
-            variant="ghost"
-            className="lg:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        variant="ghost"
+        className="lg:hidden"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
+        {mobileMenuOpen ? (
+          <X className="h-5 w-5" />
+        ) : (
+          <Menu className="h-5 w-5" />
+        )}
           </Button>
         </div>
       </div>
