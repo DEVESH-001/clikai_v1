@@ -13,6 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Switch } from "../ui/switch";
 
 // Define the structure of a pricing plan
 interface Plan {
@@ -164,9 +165,7 @@ export function PricingSection() {
   //   ).toFixed(0);
   // };
 
-  const handleToggle = () => {
-    setIsYearly((prev) => !prev);
-  };
+
 
   const [dealsPerMonth, setDealsPerMonth] = React.useState(10);
   const [isYearly, setIsYearly] = React.useState(false);
@@ -240,7 +239,7 @@ export function PricingSection() {
           </p>
         </div>
         {/* Toggle for Monthly/Yearly Billing */}
-        <div className="flex items-center justify-center gap-3 mb-8">
+        {/* <div className="flex items-center justify-center gap-3 mb-8">
           <label className="flex items-center gap-2 cursor-pointer">
             <span className={`text-sm ${!isYearly ? "font-bold" : ""}`}>
               Monthly
@@ -268,6 +267,31 @@ export function PricingSection() {
               Yearly <span className="text-green-600">(Save 17%)</span>
             </span>
           </label>
+        </div> */}
+        {/* Billing Toggle */}
+        <div className="flex items-center justify-center gap-3 mb-8">
+          <span
+            className={`text-lg ${
+              !isYearly ? "text-gray-900 font-bold" : "text-gray-600"
+            }`}
+          >
+            Monthly
+          </span>
+          <Switch
+            checked={isYearly}
+            onCheckedChange={setIsYearly}
+            className="bg-blue-500 data-[state=checked]:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          />
+          <span
+            className={`text-lg ${
+              isYearly ? "text-gray-900 font-bold" : "text-gray-600"
+            }`}
+          >
+            Yearly{" "}
+            <span className="text-green-600 text-base font-bold">
+              (Save {calculateSavings(49)}%)
+            </span>
+          </span>
         </div>
 
         {/* Deals Slider */}
@@ -287,7 +311,7 @@ export function PricingSection() {
             />
           </div>
           <div className="flex relative px-1 mt-2">
-            {[0, 5, 10, 20, 30, 40 ].map((value) => (
+            {[0, 5, 10, 20, 30, 40].map((value) => (
               <div
                 key={value}
                 className="absolute text-sm text-gray-600"
@@ -318,7 +342,7 @@ export function PricingSection() {
                 highlightedPlan === plan.name
                   ? "border-4 border-blue-500 shadow-lg bg-white scale-105"
                   : "border border-blue-200 bg-white/80"
-              } transition-all duration-300 hover:shadow-xl backdrop-blur-sm mt-8` }
+              } transition-all duration-300 hover:shadow-xl backdrop-blur-sm mt-8`}
             >
               {/* Ribbon */}
               {plan.ribbon && (
@@ -344,6 +368,11 @@ export function PricingSection() {
                       <span className="text-xl font-normal text-gray-600">
                         /{isYearly ? "year" : "month"}
                       </span>
+                      {plan.name === "Self-Service" && (
+                        <span className="block text-lg font-normal text-green-600 mt-1">
+                          during beta*
+                        </span>
+                      )}
                       {plan.perDealPrice && (
                         <span className="block text-lg font-normal text-gray-600 mt-1">
                           + ${plan.perDealPrice}/deal
@@ -354,7 +383,7 @@ export function PricingSection() {
                     <div className="text-3xl font-bold text-gray-900">
                       {plan.price}
                     </div>
-                  )}
+                  )}{" "}
                   {isYearly && plan.monthlyPrice && (
                     <p className="text-sm text-green-600 font-semibold mt-2">
                       Save {calculateSavings(plan.monthlyPrice)}%

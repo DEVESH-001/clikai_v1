@@ -50,16 +50,16 @@ const testimonials: Testimonial[] = [
     company: "AJX Capital",
     image: imageUrls.testimonials.jeremyCisneros,
   },
-  {
-    id: 4,
-    highlight: "saving them hours of time",
-    content:
-      "Parag and the team made the integration process simple and easy for us to provide their great AI abstraction service (Rent Rolls, Operating Statements, T12s) to our customers, saving them hours of time!",
-    author: "Grant Weiss",
-    role: "CEO",
-    company: "ROCKVAL™",
-    image: imageUrls.testimonials.grantWeiss,
-  },
+  // {
+  //   id: 4,
+  //   highlight: "saving them hours of time",
+  //   content:
+  //     "Parag and the team made the integration process simple and easy for us to provide their great AI abstraction service (Rent Rolls, Operating Statements, T12s) to our customers, saving them hours of time!",
+  //   author: "Grant Weiss",
+  //   role: "CEO",
+  //   company: "ROCKVAL™",
+  //   image: imageUrls.testimonials.grantWeiss,
+  // },
   {
     id: 5,
     highlight:
@@ -97,7 +97,7 @@ const companies = [
   "Bellwether Real Estate Capital",
   "TrueRate Services",
   "AJX Capital",
-  "ROCKVAL™",
+  // "ROCKVAL™",
   "Verdad Commercial Real Estate Companies",
   "Moneil Investment Group LLC",
   "Lima One Capital",
